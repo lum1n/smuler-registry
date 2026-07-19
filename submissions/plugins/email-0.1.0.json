@@ -1,0 +1,16 @@
+{
+  "id": "email",
+  "name": "Email",
+  "version": "0.1.0",
+  "description": "Unread email count and recent messages from Gmail, Outlook, iCloud, and IMAP inboxes",
+  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/email-0.1.0.tar.gz",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "3d5d628e44f15854551ba9c6780cdb293be2c8bfacb0a3e85d4e29b65a54612f",
+  "minimumHostVersion": "0.1.0",
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ]
+}

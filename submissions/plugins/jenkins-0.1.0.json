@@ -1,0 +1,16 @@
+{
+  "id": "jenkins",
+  "name": "Jenkins",
+  "version": "0.1.0",
+  "description": "CI build health for Jenkins jobs",
+  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/jenkins-0.1.0.tar.gz",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "a61a530cd74999a09595f2c88a00c99072b678686632cd6c3c1ce836a938ceec",
+  "minimumHostVersion": "0.1.0",
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ]
+}

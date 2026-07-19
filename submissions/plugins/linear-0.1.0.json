@@ -1,0 +1,16 @@
+{
+  "id": "linear",
+  "name": "Linear",
+  "version": "0.1.0",
+  "description": "Assigned issues and workflow signals from Linear",
+  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/linear-0.1.0.tar.gz",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "28304eb2ca9ffa19c83870a93fb1b6dbd9334b918c3f0e2a845ca6eec2d78cd3",
+  "minimumHostVersion": "0.1.0",
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ]
+}

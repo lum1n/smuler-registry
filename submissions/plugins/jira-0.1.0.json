@@ -1,0 +1,15 @@
+{
+  "id": "jira",
+  "name": "Jira",
+  "version": "0.1.0",
+  "description": "Assigned issues and workflow signals from Jira",
+  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/jira-0.1.0.tar.gz",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "2e1ee594ca209888588c52b3dce3e6f229c4f3f45341bb9e5b694e3cc0ab5620",
+  "minimumHostVersion": "0.1.0",
+  "capabilities": [
+    "summary",
+    "items",
+    "alerts"
+  ]
+}
