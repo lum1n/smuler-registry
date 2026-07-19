@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/lum1n/smuler-registry/schema/registry.schema.json",
+  "title": "Smuler Registry Index",
+  "type": "object",
+  "required": ["version", "plugins"],
+  "properties": {
+    "version": { "type": "string", "minLength": 1 },
+    "plugins": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/pluginEntry" }
+    },
+    "themes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/themeEntry" }
+    },
+    "generatedAt": { "type": "string" },
+    "source": { "type": "string", "format": "uri" }
+  },
+  "$defs": {
+    "baseEntry": {
+      "type": "object",
+      "required": ["id", "name", "version", "description", "url", "publicKey", "sha256"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$" },
+        "description": { "type": "string", "minLength": 1 },
+        "author": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "publicKey": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "minimumHostVersion": { "type": "string" },
+        "category": { "type": "string" },
+        "homepage": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "pluginEntry": {
+      "allOf": [
+        { "$ref": "#/$defs/baseEntry" },
+        {
+          "type": "object",
+          "properties": {
+            "capabilities": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      ]
+    },
+    "themeEntry": {
+      "allOf": [
+        { "$ref": "#/$defs/baseEntry" },
+        {
+          "type": "object",
+          "properties": {
+            "previewUrl": { "type": "string", "format": "uri" }
+          }
+        }
+      ]
+    }
+  }
+}
