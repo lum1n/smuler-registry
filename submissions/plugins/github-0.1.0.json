@@ -3,9 +3,9 @@
   "name": "GitHub",
   "version": "0.1.0",
   "description": "GitHub reviews, pull requests, and notifications",
-  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/github-0.1.0.tar.gz",
-  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-  "sha256": "e283ae939bdb0302c26b62087811a0c059bf42ed848105539c8f1c8d3c05ed8f",
+  "url": "https://github.com/lum1n/smuler-registry/releases/download/plugins-v0.1.0/github-0.1.0.tar.gz",
+  "publicKey": "JCOC+GxnKtY2xaQ7OGZ/RDSzZFZSQI27N6dNvP8ZUDI=",
+  "sha256": "6c49d0b3ace1990437638268b5a43a98a6bd2c5ae077a3e3ce7722b450df2124",
   "minimumHostVersion": "0.1.0",
   "capabilities": [
     "summary",

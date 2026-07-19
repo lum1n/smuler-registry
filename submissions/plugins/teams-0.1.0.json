@@ -3,9 +3,9 @@
   "name": "Teams",
   "version": "0.1.0",
   "description": "Microsoft Teams mentions, meetings, and call awareness",
-  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/teams-0.1.0.tar.gz",
-  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-  "sha256": "a3d1f1e16677bdadb4b8e46704c851fbb2b8ab3ff74001e36cef58d3e414d772",
+  "url": "https://github.com/lum1n/smuler-registry/releases/download/plugins-v0.1.0/teams-0.1.0.tar.gz",
+  "publicKey": "JCOC+GxnKtY2xaQ7OGZ/RDSzZFZSQI27N6dNvP8ZUDI=",
+  "sha256": "fb7cd5d83a3612c97c6b9a04833f47f5db2a6a14a6b81d9f174765f3266bfe17",
   "minimumHostVersion": "0.1.0",
   "capabilities": [
     "summary",

@@ -3,9 +3,9 @@
   "name": "AI Providers",
   "version": "0.1.0",
   "description": "Usage limits and quota tracking for AI coding providers",
-  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/ai-provider-0.1.0.tar.gz",
-  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-  "sha256": "0205770946e143213e8d3f95747116349ccd73757666414d2e05ae36b6b9458e",
+  "url": "https://github.com/lum1n/smuler-registry/releases/download/plugins-v0.1.0/ai-provider-0.1.0.tar.gz",
+  "publicKey": "JCOC+GxnKtY2xaQ7OGZ/RDSzZFZSQI27N6dNvP8ZUDI=",
+  "sha256": "2c938b05df5aeebaf0f119258319e65acfc509b2f2a527bafd5bcd84a332170d",
   "minimumHostVersion": "0.1.0",
   "capabilities": [
     "summary",

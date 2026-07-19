@@ -3,9 +3,9 @@
   "name": "Bitbucket",
   "version": "0.1.0",
   "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
-  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/bitbucket-0.1.0.tar.gz",
-  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-  "sha256": "751d2898e2f6218fe1676e1555095d3fa79342a11ae8bab0982076f5173401e2",
+  "url": "https://github.com/lum1n/smuler-registry/releases/download/plugins-v0.1.0/bitbucket-0.1.0.tar.gz",
+  "publicKey": "JCOC+GxnKtY2xaQ7OGZ/RDSzZFZSQI27N6dNvP8ZUDI=",
+  "sha256": "ecfaa20d995d321c89ec4ef740246db98c03372aedab420ebb6a364ef17761e4",
   "minimumHostVersion": "0.1.0",
   "capabilities": [
     "summary",

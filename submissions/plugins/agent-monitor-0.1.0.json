@@ -3,9 +3,9 @@
   "name": "Agent Monitor",
   "version": "0.1.0",
   "description": "Monitors AI coding agents (Claude Code, Codex, OpenCode, Pi, Aider, Archer) from local process and session state, with native hook integration for tool-level status",
-  "url": "https://github.com/lum1n/smuler/releases/download/plugins-v0.1.0/agent-monitor-0.1.0.tar.gz",
-  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-  "sha256": "b4f7756176e1bdaccdf88ba36bc902d26b42d477d70a776117aa73dcd189254a",
+  "url": "https://github.com/lum1n/smuler-registry/releases/download/plugins-v0.1.0/agent-monitor-0.1.0.tar.gz",
+  "publicKey": "JCOC+GxnKtY2xaQ7OGZ/RDSzZFZSQI27N6dNvP8ZUDI=",
+  "sha256": "3e63ffc29d09a9710fc092e15ff3f89d1bd1536ca3e1a49227eb4fce0edab754",
   "minimumHostVersion": "0.1.0",
   "capabilities": [
     "summary",

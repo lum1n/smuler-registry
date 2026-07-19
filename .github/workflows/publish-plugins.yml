@@ -1,0 +1,37 @@
+name: Publish Plugin Release
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'releases/plugins-*/**'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish plugin archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          for dir in releases/plugins-*/; do
+            tag=$(basename "$dir")
+            assets=("$dir"*.tar.gz)
+            if [ ${#assets[@]} -eq 0 ]; then
+              echo "No archives in $dir, skipping"
+              continue
+            fi
+            if gh release view "$tag" >/dev/null 2>&1; then
+              gh release upload "$tag" "${assets[@]}" --clobber
+            else
+              gh release create "$tag" "${assets[@]}" \
+                --title "Plugins ${tag#plugins-}" \
+                --notes "Signed plugin archives for ${tag}."
+            fi
+          done
