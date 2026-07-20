@@ -1,0 +1,16 @@
+{
+  "id": "cursor-cloud-agents",
+  "name": "Cursor Cloud Agents",
+  "version": "0.1.0",
+  "description": "Monitor Cursor cloud agents \u2014 status, repos, runs, PRs, and token usage",
+  "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/cursor-cloud-agents-0.1.0.tar.gz",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "a5a3b619b848cf13cbea90576a309a8b8dd7a2e1c1ede0b43b7a0e801524dd3c",
+  "minimumHostVersion": "0.1.0",
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ]
+}
