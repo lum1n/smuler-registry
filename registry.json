@@ -33,6 +33,22 @@
       ]
     },
     {
+      "id": "ai-provider",
+      "name": "AI Providers",
+      "version": "0.1.1",
+      "description": "Usage limits and quota tracking for AI coding providers",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/ai-provider-0.1.1.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "36fa4aa1ff0f056425a939ca08da54b658fabb1f3d69c37768a4796229524914",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
       "id": "bitbucket",
       "name": "Bitbucket",
       "version": "0.1.0",
@@ -40,6 +56,21 @@
       "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/bitbucket-0.1.0.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
       "sha256": "304fc950f3827a9321c7526881f76837ca6b4be14fd4d7ded424c6a87b13f4f9",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "alerts"
+      ]
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "version": "0.1.1",
+      "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/bitbucket-0.1.1.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "c1e7f2f1168a0477b6be3328fd11263afac4db2c2e36fa7bc71f1662255bf0cb",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -143,6 +174,21 @@
       ]
     },
     {
+      "id": "jira",
+      "name": "Jira",
+      "version": "0.1.1",
+      "description": "Assigned issues and workflow signals from Jira",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/jira-0.1.1.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "3c1be4f35b0708b043f3b10b907dfb091a56d002e660173da44789c7be7a5793",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "alerts"
+      ]
+    },
+    {
       "id": "linear",
       "name": "Linear",
       "version": "0.1.0",
@@ -176,6 +222,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-20T09:14:38Z",
+  "generatedAt": "2026-07-20T10:53:38Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
