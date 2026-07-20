@@ -1,0 +1,83 @@
+name: Publish Registry Release
+
+# Publishes the registry.json release asset Smuler downloads.
+# Triggers:
+# - Automatically when a PR that touches submissions/** or registry.json is merged
+# - Manually via Actions → Publish Registry Release → Run workflow
+# Does not rely on a follow-up push to main to trigger publishing
+# (GITHUB_TOKEN pushes cannot start other workflows).
+on:
+  pull_request:
+    types: [closed]
+    branches: [main, master]
+    paths:
+      - 'submissions/**'
+      - 'registry.json'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why are you republishing? (optional)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout merged result
+        uses: actions/checkout@v4
+        with:
+          # Prefer the merge commit so we see exactly what landed on the base branch.
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.merge_commit_sha || github.ref }}
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Merge approved submissions into registry.json
+        run: go run ./cmd/merge-submissions --index registry.json --submissions submissions
+
+      - name: Validate updated registry index
+        run: go run ./cmd/validate --index registry.json
+
+      - name: Commit and push registry update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- registry.json submissions; then
+            echo "No submission changes to merge"
+            exit 0
+          fi
+          BASE_REF="${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref || github.ref_name }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry.json submissions
+          git commit -m "Merge approved submissions into registry.json"
+          git push origin "HEAD:${BASE_REF}"
+
+      - name: Publish registry.json release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(jq -r .version registry.json)
+          TAG="registry-v${VERSION}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" registry.json --clobber
+          else
+            gh release create "$TAG" registry.json \
+              --title "Registry v${VERSION}" \
+              --notes "Updated smuler registry index."
+          fi
+          LATEST_TAG="latest"
+          if gh release view "$LATEST_TAG" >/dev/null 2>&1; then
+            gh release upload "$LATEST_TAG" registry.json --clobber
+          else
+            gh release create "$LATEST_TAG" registry.json \
+              --title "Latest registry" \
+              --notes "Always points to the current registry index." \
+              --latest
+          fi

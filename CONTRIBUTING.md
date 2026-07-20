@@ -27,7 +27,7 @@ submissions/plugins/<id>-<version>.json
 submissions/themes/<id>-<version>.json
 ```
 
-Maintainers merge approved submissions into `registry.json` during review. When a PR lands on `main`, the **Merge Submissions** workflow copies any files under `submissions/plugins/` and `submissions/themes/` into `registry.json`, removes the submission files, validates the index, and pushes the update (which triggers the registry release workflow).
+Maintainers merge approved submissions into `registry.json` during review. When a PR that touches `submissions/**` or `registry.json` is merged into `main`, the **Publish Registry Release** workflow copies any files under `submissions/plugins/` and `submissions/themes/` into `registry.json`, removes the submission files, validates the index, pushes the update if needed, and publishes the `registry.json` GitHub Release asset that Smuler downloads. Maintainers can also run that workflow manually from the Actions tab (**Run workflow**).
 
 ### Option B: Direct index edit
 
