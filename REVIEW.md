@@ -48,8 +48,15 @@ Use this checklist when reviewing registry submissions. CI validates signatures 
 1. Confirm CI green
 2. Complete checklist above
 3. Merge PR
-4. If using submission files, copy approved entry into `registry.json` and remove submission file
-5. Release workflow publishes updated `registry.json` asset
+4. **Automated:** the Merge Submissions workflow copies approved entries from `submissions/plugins/` and `submissions/themes/` into `registry.json`, removes the submission files, and pushes to `main`
+5. **Automated:** the Publish Registry Release workflow publishes the updated `registry.json` asset
+
+Manual merge (if needed):
+
+```bash
+go run ./cmd/merge-submissions
+go run ./cmd/validate --index registry.json
+```
 
 ## Revocation
 
