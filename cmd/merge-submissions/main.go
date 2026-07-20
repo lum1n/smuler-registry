@@ -7,6 +7,8 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -166,25 +168,96 @@ func loadEntry(path string) (registryEntry, error) {
 }
 
 func upsertEntry(entries *[]registryEntry, kind string, entry registryEntry) error {
-	key := entryKey(entry)
-	for _, existing := range *entries {
-		if entryKey(existing) == key {
-			return fmt.Errorf("duplicate %s entry %s", kind, key)
+	// One listing per id: a new submission replaces any previous version.
+	for i, existing := range *entries {
+		if existing.ID != entry.ID {
+			continue
 		}
+		if existing.Version == entry.Version {
+			return fmt.Errorf("duplicate %s entry %s@%s", kind, entry.ID, entry.Version)
+		}
+		if cmp, err := compareSemver(entry.Version, existing.Version); err != nil {
+			return err
+		} else if cmp < 0 {
+			return fmt.Errorf(
+				"%s %s@%s is older than existing %s@%s; bump version to replace",
+				kind, entry.ID, entry.Version, existing.ID, existing.Version,
+			)
+		}
+		(*entries)[i] = entry
+		return nil
 	}
 	*entries = append(*entries, entry)
 	return nil
 }
 
-func entryKey(entry registryEntry) string {
-	return entry.ID + "@" + entry.Version
-}
-
 func sortEntries(entries []registryEntry) {
 	sort.Slice(entries, func(i, j int) bool {
 		if entries[i].ID == entries[j].ID {
-			return entries[i].Version < entries[j].Version
+			// Newest first if multiples ever appear.
+			cmp, err := compareSemver(entries[i].Version, entries[j].Version)
+			if err == nil {
+				return cmp > 0
+			}
+			return entries[i].Version > entries[j].Version
 		}
 		return entries[i].ID < entries[j].ID
 	})
+}
+
+// compareSemver returns -1 if a<b, 0 if a==b, 1 if a>b for simple x.y.z[-prerelease].
+func compareSemver(a, b string) (int, error) {
+	ap, err := parseSemver(a)
+	if err != nil {
+		return 0, fmt.Errorf("invalid semver %q: %w", a, err)
+	}
+	bp, err := parseSemver(b)
+	if err != nil {
+		return 0, fmt.Errorf("invalid semver %q: %w", b, err)
+	}
+	for i := 0; i < 3; i++ {
+		if ap.core[i] < bp.core[i] {
+			return -1, nil
+		}
+		if ap.core[i] > bp.core[i] {
+			return 1, nil
+		}
+	}
+	// No prerelease > prerelease (semver rule).
+	if ap.pre == "" && bp.pre != "" {
+		return 1, nil
+	}
+	if ap.pre != "" && bp.pre == "" {
+		return -1, nil
+	}
+	if ap.pre < bp.pre {
+		return -1, nil
+	}
+	if ap.pre > bp.pre {
+		return 1, nil
+	}
+	return 0, nil
+}
+
+type semverParts struct {
+	core [3]int
+	pre  string
+}
+
+func parseSemver(v string) (semverParts, error) {
+	var out semverParts
+	main, pre, _ := strings.Cut(v, "-")
+	out.pre = pre
+	parts := strings.Split(main, ".")
+	if len(parts) != 3 {
+		return out, fmt.Errorf("want major.minor.patch")
+	}
+	for i, p := range parts {
+		n, err := strconv.Atoi(p)
+		if err != nil || n < 0 {
+			return out, fmt.Errorf("invalid numeric part %q", p)
+		}
+		out.core[i] = n
+	}
+	return out, nil
 }

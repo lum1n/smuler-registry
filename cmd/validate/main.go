@@ -127,23 +127,22 @@ func validateIndex(path string, skipFetch bool) error {
 		return fmt.Errorf("missing version")
 	}
 
-	seen := map[string]bool{}
+	seenPlugins := map[string]string{}
 	for _, e := range idx.Plugins {
-		key := "plugin:" + e.ID + "@" + e.Version
-		if seen[key] {
-			return fmt.Errorf("duplicate plugin entry %s", key)
+		if prev, ok := seenPlugins[e.ID]; ok {
+			return fmt.Errorf("duplicate plugin id %q (%s and %s); index keeps one version per id", e.ID, prev, e.Version)
 		}
-		seen[key] = true
+		seenPlugins[e.ID] = e.Version
 		if err := validateEntry(e, skipFetch); err != nil {
 			return fmt.Errorf("plugin %s: %w", e.ID, err)
 		}
 	}
+	seenThemes := map[string]string{}
 	for _, e := range idx.Themes {
-		key := "theme:" + e.ID + "@" + e.Version
-		if seen[key] {
-			return fmt.Errorf("duplicate theme entry %s", key)
+		if prev, ok := seenThemes[e.ID]; ok {
+			return fmt.Errorf("duplicate theme id %q (%s and %s); index keeps one version per id", e.ID, prev, e.Version)
 		}
-		seen[key] = true
+		seenThemes[e.ID] = e.Version
 		if err := validateEntry(e, skipFetch); err != nil {
 			return fmt.Errorf("theme %s: %w", e.ID, err)
 		}
