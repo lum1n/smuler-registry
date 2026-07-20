@@ -48,7 +48,12 @@ Use this checklist when reviewing registry submissions. CI validates signatures 
 1. Confirm CI green
 2. Complete checklist above
 3. Merge PR
-4. **Automated:** the Publish Registry on Merge workflow copies approved entries from `submissions/plugins/` and `submissions/themes/` into `registry.json`, removes the submission files, pushes to `main` if needed, and publishes the updated `registry.json` release asset
+4. **Automated:** the Publish Registry Release workflow copies approved entries from `submissions/plugins/` and `submissions/themes/` into `registry.json`, removes the submission files, pushes to `main` if needed, and publishes the updated `registry.json` release asset
+
+Manual republish (if the release asset is stale, or after a direct `main` fix):
+
+1. Open **Actions → Publish Registry Release**
+2. Click **Run workflow** on `main`
 
 Manual merge (if needed):
 

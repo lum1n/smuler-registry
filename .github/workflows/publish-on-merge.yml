@@ -1,9 +1,11 @@
-name: Publish Registry on Merge
+name: Publish Registry Release
 
-# Runs after a PR that touches the registry is merged.
-# Merges any submission files into registry.json, then publishes the
-# release asset Smuler downloads. Does not rely on a follow-up push to
-# main to trigger publishing (GITHUB_TOKEN pushes cannot start other workflows).
+# Publishes the registry.json release asset Smuler downloads.
+# Triggers:
+# - Automatically when a PR that touches submissions/** or registry.json is merged
+# - Manually via Actions → Publish Registry Release → Run workflow
+# Does not rely on a follow-up push to main to trigger publishing
+# (GITHUB_TOKEN pushes cannot start other workflows).
 on:
   pull_request:
     types: [closed]
@@ -12,6 +14,11 @@ on:
       - 'submissions/**'
       - 'registry.json'
   workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why are you republishing? (optional)'
+        required: false
+        type: string
 
 permissions:
   contents: write
