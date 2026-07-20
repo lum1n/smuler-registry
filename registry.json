@@ -1,7 +1,181 @@
 {
   "version": "1.0.0",
-  "plugins": [],
+  "plugins": [
+    {
+      "id": "agent-monitor",
+      "name": "Agent Monitor",
+      "version": "0.1.0",
+      "description": "Monitors AI coding agents (Claude Code, Codex, OpenCode, Pi, Aider, Archer) from local process and session state, with native hook integration for tool-level status",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/agent-monitor-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "28274855a0ac3565d993b1033838ceb7e07d302912c5b5642d3b642ed3518f4c",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "alerts"
+      ]
+    },
+    {
+      "id": "ai-provider",
+      "name": "AI Providers",
+      "version": "0.1.0",
+      "description": "Usage limits and quota tracking for AI coding providers",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/ai-provider-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "776975b571ce55e7cd87d8aa1ccef9880d7e6f3bdbab0a5d8e37d8bdb4797ea2",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "version": "0.1.0",
+      "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/bitbucket-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "304fc950f3827a9321c7526881f76837ca6b4be14fd4d7ded424c6a87b13f4f9",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "alerts"
+      ]
+    },
+    {
+      "id": "ci-github-actions",
+      "name": "GitHub Actions",
+      "version": "0.1.0",
+      "description": "Workflow health for watched repositories",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/ci-github-actions-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "9e19a03abeb923d7de1f75fd83cab1504e0c46d7ba75a49f12c6c07e359aeda5",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "cursor-cloud-agents",
+      "name": "Cursor Cloud Agents",
+      "version": "0.1.0",
+      "description": "Monitor Cursor cloud agents — status, repos, runs, PRs, and token usage",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/cursor-cloud-agents-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "a5a3b619b848cf13cbea90576a309a8b8dd7a2e1c1ede0b43b7a0e801524dd3c",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "version": "0.1.0",
+      "description": "Unread email count and recent messages from Gmail, Outlook, iCloud, and IMAP inboxes",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/email-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "ea4504194ee8d55e09ba7e1b29722af221c0ece94fe521d94059e223d57f0aff",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "version": "0.1.0",
+      "description": "GitHub reviews, pull requests, and notifications",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/github-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "75b39a980e665e79303452686c34161c764a6018cf833c6212c4a8d44cfab6ec",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "jenkins",
+      "name": "Jenkins",
+      "version": "0.1.0",
+      "description": "CI build health for Jenkins jobs",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/jenkins-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "43db0b32531544e20637b4f590bf54e7c817cfcba6dcef70d8306017828ac99e",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "jira",
+      "name": "Jira",
+      "version": "0.1.0",
+      "description": "Assigned issues and workflow signals from Jira",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/jira-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "b3f6da5efdffc6e51fb590f64d583296ae3555177430529283d95d86d6c79e78",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "alerts"
+      ]
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "version": "0.1.0",
+      "description": "Assigned issues and workflow signals from Linear",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/linear-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "a0349e918041d704d3f76919607e0accfc187ecc9fc48882579e97af3c6f75ea",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
+      "id": "teams",
+      "name": "Teams",
+      "version": "0.1.0",
+      "description": "Microsoft Teams mentions, meetings, and call awareness",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/teams-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "3894d1d504967d688fc0b3a8788314affbaac360ed31a5c71212774a6be33af5",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    }
+  ],
   "themes": [],
-  "generatedAt": "2026-07-17T00:00:00Z",
+  "generatedAt": "2026-07-20T09:14:38Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
