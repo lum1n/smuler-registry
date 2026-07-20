@@ -255,12 +255,12 @@ func validateArchive(e registryEntry) error {
 	}
 
 	if m.Executable != "" {
-		return verifyPluginSignature(&m, manifestDir)
+		return verifyPluginSignature(manifestData, &m, manifestDir)
 	}
-	return verifyThemeSignature(&m, manifestDir)
+	return verifyThemeSignature(manifestData, &m, manifestDir)
 }
 
-func verifyPluginSignature(m *pluginManifest, dir string) error {
+func verifyPluginSignature(manifestData []byte, m *pluginManifest, dir string) error {
 	if m.PublicKey == "" || m.Signatures == nil || m.Signatures.Manifest == "" {
 		return fmt.Errorf("unsigned plugin")
 	}
@@ -268,12 +268,10 @@ func verifyPluginSignature(m *pluginManifest, dir string) error {
 	if err != nil {
 		return err
 	}
-	sanitized := pluginManifest{
-		ID: m.ID, Name: m.Name, Version: m.Version, Description: m.Description,
-		Executable: m.Executable, MinimumHostVersion: m.MinimumHostVersion,
-		Capabilities: m.Capabilities, Author: m.Author, PublicKey: m.PublicKey,
+	manifestBytes, err := manifestSigningPayload(manifestData)
+	if err != nil {
+		return fmt.Errorf("manifest signing payload: %w", err)
 	}
-	manifestBytes, _ := json.Marshal(sanitized)
 	if !verifySig(pubKey, manifestBytes, m.Signatures.Manifest) {
 		return fmt.Errorf("manifest signature mismatch")
 	}
@@ -289,7 +287,7 @@ func verifyPluginSignature(m *pluginManifest, dir string) error {
 	return nil
 }
 
-func verifyThemeSignature(m *pluginManifest, dir string) error {
+func verifyThemeSignature(manifestData []byte, m *pluginManifest, dir string) error {
 	if m.PublicKey == "" || m.Signatures == nil || m.Signatures.Manifest == "" {
 		return fmt.Errorf("unsigned theme")
 	}
@@ -297,13 +295,10 @@ func verifyThemeSignature(m *pluginManifest, dir string) error {
 	if err != nil {
 		return err
 	}
-	sanitized := pluginManifest{
-		ID: m.ID, Name: m.Name, Version: m.Version, Description: m.Description,
-		MinimumHostVersion: m.MinimumHostVersion, Category: m.Category,
-		Preview: m.Preview, TokensFile: m.TokensFile,
-		Author: m.Author, PublicKey: m.PublicKey,
+	manifestBytes, err := manifestSigningPayload(manifestData)
+	if err != nil {
+		return fmt.Errorf("manifest signing payload: %w", err)
 	}
-	manifestBytes, _ := json.Marshal(sanitized)
 	if !verifySig(pubKey, manifestBytes, m.Signatures.Manifest) {
 		return fmt.Errorf("manifest signature mismatch")
 	}
@@ -321,6 +316,128 @@ func verifyThemeSignature(m *pluginManifest, dir string) error {
 		}
 	}
 	return nil
+}
+
+// manifestSigningPayload reconstructs the bytes smuler signs: compact JSON of the
+// manifest object with the signatures field removed, preserving field order at
+// every nesting level to match smuler plugin sign/publish.
+func manifestSigningPayload(manifestData []byte) ([]byte, error) {
+	dec := json.NewDecoder(bytes.NewReader(manifestData))
+	token, err := dec.Token()
+	if err != nil {
+		return nil, err
+	}
+	if token != json.Delim('{') {
+		return nil, fmt.Errorf("manifest root must be an object")
+	}
+
+	var buf bytes.Buffer
+	buf.WriteByte('{')
+	first := true
+	for dec.More() {
+		keyToken, err := dec.Token()
+		if err != nil {
+			return nil, err
+		}
+		key, ok := keyToken.(string)
+		if !ok {
+			return nil, fmt.Errorf("manifest object keys must be strings")
+		}
+		value, err := compactPreserveOrder(dec)
+		if err != nil {
+			return nil, err
+		}
+		if key == "signatures" {
+			continue
+		}
+		if !first {
+			buf.WriteByte(',')
+		}
+		first = false
+		keyJSON, err := json.Marshal(key)
+		if err != nil {
+			return nil, err
+		}
+		buf.Write(keyJSON)
+		buf.WriteByte(':')
+		buf.Write(value)
+	}
+	if _, err := dec.Token(); err != nil {
+		return nil, err
+	}
+	buf.WriteByte('}')
+	return buf.Bytes(), nil
+}
+
+func compactPreserveOrder(dec *json.Decoder) ([]byte, error) {
+	token, err := dec.Token()
+	if err != nil {
+		return nil, err
+	}
+
+	switch v := token.(type) {
+	case json.Delim:
+		switch v {
+		case '{':
+			var buf bytes.Buffer
+			buf.WriteByte('{')
+			first := true
+			for dec.More() {
+				keyToken, err := dec.Token()
+				if err != nil {
+					return nil, err
+				}
+				key, ok := keyToken.(string)
+				if !ok {
+					return nil, fmt.Errorf("object keys must be strings")
+				}
+				value, err := compactPreserveOrder(dec)
+				if err != nil {
+					return nil, err
+				}
+				if !first {
+					buf.WriteByte(',')
+				}
+				first = false
+				keyJSON, err := json.Marshal(key)
+				if err != nil {
+					return nil, err
+				}
+				buf.Write(keyJSON)
+				buf.WriteByte(':')
+				buf.Write(value)
+			}
+			if _, err := dec.Token(); err != nil {
+				return nil, err
+			}
+			buf.WriteByte('}')
+			return buf.Bytes(), nil
+		case '[':
+			var buf bytes.Buffer
+			buf.WriteByte('[')
+			first := true
+			for dec.More() {
+				value, err := compactPreserveOrder(dec)
+				if err != nil {
+					return nil, err
+				}
+				if !first {
+					buf.WriteByte(',')
+				}
+				first = false
+				buf.Write(value)
+			}
+			if _, err := dec.Token(); err != nil {
+				return nil, err
+			}
+			buf.WriteByte(']')
+			return buf.Bytes(), nil
+		default:
+			return nil, fmt.Errorf("unexpected delimiter %q", v)
+		}
+	default:
+		return json.Marshal(v)
+	}
 }
 
 func decodePublicKey(b64 string) (ed25519.PublicKey, error) {
