@@ -58,13 +58,13 @@ Pull requests run automated validation:
 - SHA256 integrity match
 - Ed25519 signature verification (manifest + binary/bundle)
 - Public key binding between registry entry and signed manifest
-- No duplicate `(id, version)` pairs
+- No duplicate plugin/theme `id`s (the index lists one version per id)
 
 All checks must pass. A maintainer must still approve the PR.
 
 ## Updating an existing entry
 
-Bump `version`, publish a new release, and submit a new entry. Do not overwrite existing version entries.
+Bump `version`, publish a new release, and submit a new entry. Merging that submission **replaces** the previous listing for the same `id` so Browse Registry shows a single current version.
 
 ## Revocation
 

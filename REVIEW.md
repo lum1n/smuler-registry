@@ -9,7 +9,7 @@ Use this checklist when reviewing registry submissions. CI validates signatures 
 - [ ] SHA256 matches downloaded archive
 - [ ] Manifest + binary/bundle signatures verify (Ed25519)
 - [ ] Registry `publicKey` matches manifest `publicKey`
-- [ ] Semver version; no duplicate `(id, version)`
+- [ ] Semver version; no duplicate plugin/theme `id` (one listed version each)
 
 ## Human review
 

@@ -19,22 +19,6 @@
     {
       "id": "ai-provider",
       "name": "AI Providers",
-      "version": "0.1.0",
-      "description": "Usage limits and quota tracking for AI coding providers",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/ai-provider-0.1.0.tar.gz",
-      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "776975b571ce55e7cd87d8aa1ccef9880d7e6f3bdbab0a5d8e37d8bdb4797ea2",
-      "minimumHostVersion": "0.1.0",
-      "capabilities": [
-        "summary",
-        "items",
-        "actions",
-        "alerts"
-      ]
-    },
-    {
-      "id": "ai-provider",
-      "name": "AI Providers",
       "version": "0.1.1",
       "description": "Usage limits and quota tracking for AI coding providers",
       "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/ai-provider-0.1.1.tar.gz",
@@ -45,21 +29,6 @@
         "summary",
         "items",
         "actions",
-        "alerts"
-      ]
-    },
-    {
-      "id": "bitbucket",
-      "name": "Bitbucket",
-      "version": "0.1.0",
-      "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/bitbucket-0.1.0.tar.gz",
-      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "304fc950f3827a9321c7526881f76837ca6b4be14fd4d7ded424c6a87b13f4f9",
-      "minimumHostVersion": "0.1.0",
-      "capabilities": [
-        "summary",
-        "items",
         "alerts"
       ]
     },
@@ -98,7 +67,7 @@
       "id": "cursor-cloud-agents",
       "name": "Cursor Cloud Agents",
       "version": "0.1.0",
-      "description": "Monitor Cursor cloud agents — status, repos, runs, PRs, and token usage",
+      "description": "Monitor Cursor cloud agents \u2014 status, repos, runs, PRs, and token usage",
       "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/cursor-cloud-agents-0.1.0.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
       "sha256": "a5a3b619b848cf13cbea90576a309a8b8dd7a2e1c1ede0b43b7a0e801524dd3c",
@@ -161,21 +130,6 @@
     {
       "id": "jira",
       "name": "Jira",
-      "version": "0.1.0",
-      "description": "Assigned issues and workflow signals from Jira",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/jira-0.1.0.tar.gz",
-      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "b3f6da5efdffc6e51fb590f64d583296ae3555177430529283d95d86d6c79e78",
-      "minimumHostVersion": "0.1.0",
-      "capabilities": [
-        "summary",
-        "items",
-        "alerts"
-      ]
-    },
-    {
-      "id": "jira",
-      "name": "Jira",
       "version": "0.1.1",
       "description": "Assigned issues and workflow signals from Jira",
       "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/jira-0.1.1.tar.gz",
@@ -222,6 +176,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-20T10:53:38Z",
+  "generatedAt": "2026-07-20T11:16:07Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
