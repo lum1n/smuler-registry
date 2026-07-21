@@ -4,16 +4,17 @@
     {
       "id": "agent-monitor",
       "name": "Agent Monitor",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Monitors AI coding agents (Claude Code, Codex, OpenCode, Pi, Aider, Archer) from local process and session state, with native hook integration for tool-level status",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/agent-monitor-0.1.0.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.4/agent-monitor-0.1.1.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "28274855a0ac3565d993b1033838ceb7e07d302912c5b5642d3b642ed3518f4c",
+      "sha256": "adc76812934ff5f89c93d49107ab68f3b989f1d6e4ce1081e9b9bca8785d1cf1",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
         "items",
-        "alerts"
+        "alerts",
+        "actions"
       ]
     },
     {
@@ -64,10 +65,26 @@
       ]
     },
     {
+      "id": "confluence",
+      "name": "Confluence",
+      "version": "0.1.2",
+      "description": "Recent Confluence activity plus companion/voice search across all spaces for pages and docs",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.3/confluence-0.1.2.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "c55415d64d3aff33f1932b37179ce874b6b6ec1851fa7ee938d4511c33186337",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
       "id": "cursor-cloud-agents",
       "name": "Cursor Cloud Agents",
       "version": "0.1.0",
-      "description": "Monitor Cursor cloud agents \u2014 status, repos, runs, PRs, and token usage",
+      "description": "Monitor Cursor cloud agents — status, repos, runs, PRs, and token usage",
       "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/cursor-cloud-agents-0.1.0.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
       "sha256": "a5a3b619b848cf13cbea90576a309a8b8dd7a2e1c1ede0b43b7a0e801524dd3c",
@@ -176,6 +193,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-20T11:16:07Z",
+  "generatedAt": "2026-07-21T13:02:58Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
