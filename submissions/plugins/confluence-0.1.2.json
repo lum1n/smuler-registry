@@ -1,0 +1,16 @@
+{
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ],
+  "description": "Recent Confluence activity plus companion/voice search across all spaces for pages and docs",
+  "id": "confluence",
+  "minimumHostVersion": "0.1.0",
+  "name": "Confluence",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "c55415d64d3aff33f1932b37179ce874b6b6ec1851fa7ee938d4511c33186337",
+  "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.3/confluence-0.1.2.tar.gz",
+  "version": "0.1.2"
+}
