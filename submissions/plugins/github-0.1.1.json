@@ -1,0 +1,17 @@
+{
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts",
+    "windows"
+  ],
+  "description": "GitHub reviews, pull requests, and notifications",
+  "id": "github",
+  "minimumHostVersion": "0.1.0",
+  "name": "GitHub",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "802f46cb8f9e43d8a56ae453a5ed0cd84e8d42de15b13fd813980d1509bec5c7",
+  "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/github-0.1.1.tar.gz",
+  "version": "0.1.1"
+}
