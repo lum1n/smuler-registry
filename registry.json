@@ -20,11 +20,11 @@
     {
       "id": "ai-provider",
       "name": "AI Providers",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Usage limits and quota tracking for AI coding providers",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/ai-provider-0.1.1.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/ai-provider-0.1.2.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "36fa4aa1ff0f056425a939ca08da54b658fabb1f3d69c37768a4796229524914",
+      "sha256": "e085a1b132284d8dd7c9d0daa4ba858d7afb3b4fbf411f7991475c69c1d2d80b",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -36,11 +36,11 @@
     {
       "id": "bitbucket",
       "name": "Bitbucket",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/bitbucket-0.1.2.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/bitbucket-0.1.3.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "17233395065f7b303d46c8aece149d09ce7d830763b944ca3053ebade90eb1da",
+      "sha256": "5694d372d2115a0441662507af1717a90a8597471b578f6b0ffd27663475e2db",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -53,11 +53,11 @@
     {
       "id": "ci-github-actions",
       "name": "GitHub Actions",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Workflow health for watched repositories",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/ci-github-actions-0.1.0.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/ci-github-actions-0.1.1.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "9e19a03abeb923d7de1f75fd83cab1504e0c46d7ba75a49f12c6c07e359aeda5",
+      "sha256": "5e50732f5536ae585b3f4eee13bf5808e89df4a9c4a99848930b9772a8bb1127",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -117,11 +117,11 @@
     {
       "id": "github",
       "name": "GitHub",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "GitHub reviews, pull requests, and notifications",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/github-0.1.1.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/github-0.1.2.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "802f46cb8f9e43d8a56ae453a5ed0cd84e8d42de15b13fd813980d1509bec5c7",
+      "sha256": "65126876d1d960234e88eb4b7628943033c0d1a7b9a774aa5f22903928999c16",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -150,11 +150,11 @@
     {
       "id": "jira",
       "name": "Jira",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Assigned issues and workflow signals from Jira",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/jira-0.1.1.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/jira-0.1.2.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "3c1be4f35b0708b043f3b10b907dfb091a56d002e660173da44789c7be7a5793",
+      "sha256": "172b1789bf253be82089b7ba94565dfdb032aa774532eb52213ab3daab5f2cee",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -165,11 +165,11 @@
     {
       "id": "linear",
       "name": "Linear",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "Assigned issues and workflow signals from Linear",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/linear-0.1.0.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/linear-0.1.1.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "a0349e918041d704d3f76919607e0accfc187ecc9fc48882579e97af3c6f75ea",
+      "sha256": "785cac66ed9aea38e3747eb570735e0227c6c457b22f58b4197be397655a5171",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
@@ -196,6 +196,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-27T07:46:29Z",
+  "generatedAt": "2026-07-27T10:40:14Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
