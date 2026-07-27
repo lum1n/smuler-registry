@@ -1,0 +1,17 @@
+{
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts",
+    "windows"
+  ],
+  "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
+  "id": "bitbucket",
+  "minimumHostVersion": "0.1.0",
+  "name": "Bitbucket",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "17233395065f7b303d46c8aece149d09ce7d830763b944ca3053ebade90eb1da",
+  "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/bitbucket-0.1.2.tar.gz",
+  "version": "0.1.2"
+}
