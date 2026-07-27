@@ -36,16 +36,18 @@
     {
       "id": "bitbucket",
       "name": "Bitbucket",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "description": "Pull requests, review requests, and pipeline status from Bitbucket Cloud",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.2/bitbucket-0.1.1.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/bitbucket-0.1.2.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "c1e7f2f1168a0477b6be3328fd11263afac4db2c2e36fa7bc71f1662255bf0cb",
+      "sha256": "17233395065f7b303d46c8aece149d09ce7d830763b944ca3053ebade90eb1da",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
         "items",
-        "alerts"
+        "actions",
+        "alerts",
+        "windows"
       ]
     },
     {
@@ -115,17 +117,18 @@
     {
       "id": "github",
       "name": "GitHub",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "description": "GitHub reviews, pull requests, and notifications",
-      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.1/github-0.1.0.tar.gz",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.5/github-0.1.1.tar.gz",
       "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
-      "sha256": "75b39a980e665e79303452686c34161c764a6018cf833c6212c4a8d44cfab6ec",
+      "sha256": "802f46cb8f9e43d8a56ae453a5ed0cd84e8d42de15b13fd813980d1509bec5c7",
       "minimumHostVersion": "0.1.0",
       "capabilities": [
         "summary",
         "items",
         "actions",
-        "alerts"
+        "alerts",
+        "windows"
       ]
     },
     {
@@ -193,6 +196,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-21T13:02:58Z",
+  "generatedAt": "2026-07-27T07:46:29Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
