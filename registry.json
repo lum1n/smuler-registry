@@ -179,6 +179,22 @@
       ]
     },
     {
+      "id": "nostr",
+      "name": "Nostr",
+      "version": "0.1.0",
+      "description": "Mentions, DMs, and notes from user-defined Nostr relays",
+      "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.7/nostr-0.1.0.tar.gz",
+      "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+      "sha256": "b267248869e082a718204aa9e5aa4f3df8a7b5e62ff777242fa942135e15ccd6",
+      "minimumHostVersion": "0.1.0",
+      "capabilities": [
+        "summary",
+        "items",
+        "actions",
+        "alerts"
+      ]
+    },
+    {
       "id": "teams",
       "name": "Teams",
       "version": "0.1.0",
@@ -196,6 +212,6 @@
     }
   ],
   "themes": [],
-  "generatedAt": "2026-07-27T10:40:14Z",
+  "generatedAt": "2026-07-27T14:17:31Z",
   "source": "https://github.com/lum1n/smuler-registry"
 }
