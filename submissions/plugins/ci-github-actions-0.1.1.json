@@ -1,0 +1,16 @@
+{
+  "capabilities": [
+    "summary",
+    "items",
+    "actions",
+    "alerts"
+  ],
+  "description": "Workflow health for watched repositories",
+  "id": "ci-github-actions",
+  "minimumHostVersion": "0.1.0",
+  "name": "GitHub Actions",
+  "publicKey": "hzBNWFpVWL2icGjiTInue7qe28iuUumD8+o+Kz2Sazo=",
+  "sha256": "5e50732f5536ae585b3f4eee13bf5808e89df4a9c4a99848930b9772a8bb1127",
+  "url": "https://github.com/lum1n/smuler-unbundled-plugins/releases/download/plugins-v0.1.6/ci-github-actions-0.1.1.tar.gz",
+  "version": "0.1.1"
+}
